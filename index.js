@@ -2,7 +2,10 @@ const portfolio = JSON.parse(require('fs').readFileSync('./data/portfolio.json')
     trade = require('./trade'),
     analyze = require('./analyze'),
     jdrop = require('jdrop')(),
-    backup = require('./util/backup');
+    backup = require('./util/backup'),
+    api = require('./util/api');
+
+api.ping('run');
 
 analyze(portfolio).then(day => {
 
@@ -49,7 +52,13 @@ analyze(portfolio).then(day => {
 
     backup()
 
+).then(() => 
+
+    api.ping('complete')
+
 ).catch(error => {
+
+    api.ping('fail', encodeURIComponent(error));
 
     console.error(error);
 

@@ -20,7 +20,15 @@ module.exports = (options, data) => {
 
                 console.log(`${response.statusCode}: ${response.statusMessage}`);
 
-                resolve(JSON.parse(body));
+                if (options.host === 'cronitor.link') {
+
+                    resolve();
+
+                } else {
+                 
+                    resolve(JSON.parse(body));
+
+                }
 
             });
         });
