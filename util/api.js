@@ -1,5 +1,6 @@
 const request = require('./request'),
-    serialize = require('./serialize');
+    serialize = require('./serialize'),
+    cronitor = process.argv[2];
 
 function api(opts) {
 
@@ -44,10 +45,12 @@ api.get = symbols => api({
     method: 'GET'
 });
 
-api.ping = (flag, message) => api({
-    host: 'cronitor.link',
-    url: `/XpMG3d/${flag}?msg=${message}`,
-    method: 'GET'
-});
+api.ping = (flag, message) => 
+
+    cronitor ? api({
+        host: 'cronitor.link',
+        url: `/${cronitor}/${flag}?msg=${message}`,
+        method: 'GET'
+    }) : Promise.resolve();
 
 module.exports = api;
