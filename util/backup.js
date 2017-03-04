@@ -12,6 +12,10 @@ module.exports = () => new Promise(resolve => {
                 stdio: 'inherit'
             }).on('close', resolve);
 
+        } else {
+
+            resolve();
+
         }
 
     });
