@@ -19,7 +19,7 @@ function api(opts) {
 
     }
 
-    console.log(`${opts.method} https://query.yahooapis.com...`);
+    console.log(`${opts.method} ${opts.host}...`);
 
     return request({
         host: opts.host,

@@ -49,7 +49,7 @@ module.exports = portfolio => api.get(stocks).then(data => {
 
     transactions.buy.sort((a, b) => b.weight - a.weight);
     
-    //print(transactions);
+    print(transactions);
     
     let i = 0,
         failed = 0;

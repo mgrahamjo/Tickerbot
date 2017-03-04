@@ -1,0 +1,23 @@
+{
+  "name": "tickerbot",
+  "version": "1.0.0",
+  "description": "Tickerbot is a Node.js program that will automatically buy and sell stocks algorithmically. It saves a snapshot of the portfolio each time it's run, and is designed to run once per day via cron.",
+  "main": "index.js",
+  "dependencies": {
+    "jdrop": "0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgrahamjo/Tickerbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgrahamjo/Tickerbot/issues"
+  },
+  "homepage": "https://github.com/mgrahamjo/Tickerbot#readme"
+}
